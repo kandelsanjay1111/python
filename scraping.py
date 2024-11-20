@@ -5,3 +5,6 @@ url = "https://webscraper.io/test-sites/e-commerce/allinone"
 html_response = requests.get(url)
 soup = bs4.BeautifulSoup(html_response.text,"html.parser")
 print(soup.html)
+print(soup.head)
+print(soup.head.title)
+print(soup.head.title.text)
