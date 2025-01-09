@@ -1,10 +1,10 @@
+from bs4 import BeautifulSoup
 import requests
-import bs4
 
-url = "https://webscraper.io/test-sites/e-commerce/allinone"
-html_response = requests.get(url)
-soup = bs4.BeautifulSoup(html_response.text,"html.parser")
-print(soup.html)
-print(soup.head)
-print(soup.head.title)
-print(soup.head.title.text)
+url = "https://www.tutorialspoint.com/index.htm"
+req = requests.get(url)
+html_content = req.content
+soup = BeautifulSoup(html_content, "html.parser")
+paragraphs = soup.find_all("p")
+for line in paragraphs:
+    print(line)
